@@ -241,7 +241,7 @@ aside:
       link: https://space.bilibili.com/194150723
   card_announcement:
     enable: true
-    content: 欢迎访问 调皮豆干 的博客呐
+    content: 欢迎访问 醉月酿星河 的博客呐
   card_recent_post:
     enable: true
     limit: 5 # if set 0 will show all

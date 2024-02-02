@@ -5169,7 +5169,7 @@ function bot_ui_ini() {
     var botui = new BotUI("hello-mashiro");
     botui.message.add({ delay: 800, content: "Hi, there !" }).then(function() {
         botui.message
-            .add({ delay: 1100, content: "这里是 Catrol (Dynesshely), 即 调皮豆干" })
+            .add({ delay: 1100, content: "这里是 Catrol (Dynesshely), 即 醉月酿星河" })
             .then(function() {
                 botui.message
                     .add({ delay: 1100, content: "自由, 散漫, 洒脱, 无拘无束的男生, 崇尚科学与技术" })
@@ -5287,7 +5287,7 @@ function bot_ui_ini() {
                     botui.action
                         .button({
                             delay: 1500,
-                            action: [{ text: "为什么叫调皮豆干呢", value: "why-cat" }],
+                            action: [{ text: "为什么叫醉月酿星河呢", value: "why-cat" }],
                         })
                         .then(function(a) {
                             fourthpart();
@@ -5330,7 +5330,7 @@ function bot_ui_ini() {
                     }).then(function() {
                         botui.message.add({
                             delay: 1300,
-                            content: "另外, 我B站的名字也叫调皮豆干, 多多支持鸭!"
+                            content: "另外, 我B站的名字也叫醉月酿星河, 多多支持鸭!"
                         });
                     });
                 });
