@@ -411,13 +411,13 @@ addtoany:
 comments:
   # Up to two comments system, the first will be shown as default
   # Choose: Disqus/Disqusjs/Livere/Gitalk/Valine/Waline/Utterances/Facebook Comments/Twikoo/Giscus/Remark42/Artalk
-  use: # Valine,Disqus
+  use: Waline # Valine,Disqus
   text: true # Display the comment name next to the button
   # lazyload: The comment system will be load when comment element enters the browser's viewport.
   # If you set it to true, the comment count will be invalid
   lazyload: true
   count: true # Display comment count in post's top_img
-  card_post_count: false # Display comment count in Home Page
+  card_post_count: true # Display comment count in Home Page
 
 # disqus
 # https://disqus.com/
@@ -462,10 +462,13 @@ valine:
 # waline - A simple comment system with backend support fork from Valine
 # https://waline.js.org/
 waline:
-  serverURL: # Waline server address url
+  serverURL: blog-comment-server.catrol.cn # Waline server address url
   bg: # waline background
   pageview: false
   option:
+    requiredMeta: [nick, mail] # 选定昵称和评论为必填项
+    locale:
+      placeholder: 昵称和邮箱为必填项，为了您能及时收到相关回复的邮件通知，请确保邮箱的正确性！ # 内容区提示
 
 # utterances
 # https://utteranc.es/
@@ -896,7 +899,7 @@ pangu:
 lazyload:
   enable: true
   field: site # site/post
-  placeholder: 
+  placeholder:
   blur: true
 
 # PWA
