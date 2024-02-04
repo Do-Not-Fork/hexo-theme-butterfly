@@ -932,7 +932,7 @@ css_prefix: true
 inject:
   head:
     - <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
-    - <link rel="stylesheet" href="./css/mine/background.css"
+    - <link rel="stylesheet" href="/css/mine/background.css"
     - <script src="/js/mine/funnytitle.js"></script>
     - <script src="/js/mine/uri.pro.js"></script>
   bottom:
