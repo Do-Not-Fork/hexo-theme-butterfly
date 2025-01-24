@@ -99,11 +99,11 @@ category_img:
 category_per_img:
 
 # The background image of footer
-footer_img: false
+footer_img: true
 
 # Website Background
 # Can set it to color or image url
-background:
+background: https://img.catrol.cn/toper/mycau.jpg
 
 cover:
   # Disable the cover or not
@@ -1064,7 +1064,7 @@ css_prefix: true
 inject:
   head:
     - <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
-    - <link rel="stylesheet" href="/css/mine/background.css"
+    - <link rel="stylesheet" href="/css/mine/botui.css">
     - <script src="/js/mine/funnytitle.js"></script>
     - <script src="/js/mine/uri.pro.js"></script>
   bottom:
