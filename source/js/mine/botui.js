@@ -1,3 +1,5 @@
+// 内容在 `bot_ui_ini` 方法中
+
 !(function (e, t) {
     "object" == typeof exports && "undefined" != typeof module ?
         (module.exports = t()) :
@@ -5163,7 +5165,7 @@
     };
 });
 
-//从这开始是方法的表达式主体
+// 从这开始是方法的表达式主体
 function bot_ui_ini() {
     var botui = new BotUI("hello-mashiro");
     botui.message.add({ delay: 800, content: "Hi, there !" }).then(function () {
@@ -5192,37 +5194,41 @@ function bot_ui_ini() {
         botui.message.add({ delay: 600, content: "Au-hu!" }).then(function () {
             secondpart();
         });
-    },
-        end = function () {
-            botui.message.add({
-                delay: 600,
-                content: "![...](https://img.catrol.cn/bqb/你酱紫很容易挨揍的.jpeg)",
-            }).then(function () {
-                botui.action
-                    .button({
-                        delay: 3000,
-                        action: [
-                            { text: "我错了, 下次不敢了, 继续吧", value: "sorry" },
-                            { text: "再见", value: "bye" },
-                        ],
-                    })
-                    .then(function (a) {
-                        "sorry" == a.value && sure();
-                        "bye" == a.value && bye();
-                    });
-            });
-        },
-        bye = function () {
-            window.close();
-        },
-        secondpart = function () {
-            botui.message.add({
-                delay: 2000,
-                content: "我今年18岁了！"
-            }).then(function () {
-                botui.message
-                    .add({ delay: 1500, content: "我现在就读于贵州贵阳市观山湖区第一高级中学, 上高三" })
-                    .then(function () {
+    };
+    var end = function () {
+        botui.message.add({
+            delay: 600,
+            content: "![...](https://img.catrol.cn/bqb/你酱紫很容易挨揍的.jpeg)",
+        }).then(function () {
+            botui.action
+                .button({
+                    delay: 3000,
+                    action: [
+                        { text: "我错了, 下次不敢了, 继续吧", value: "sorry" },
+                        { text: "再见", value: "bye" },
+                    ],
+                })
+                .then(function (a) {
+                    "sorry" == a.value && sure();
+                    "bye" == a.value && bye();
+                });
+        });
+    };
+    var bye = function () {
+        window.close();
+    };
+    var secondpart = function () {
+        botui.message.add({
+            delay: 2000,
+            content: "我今年 18 岁了！ (划掉) 19 了",
+        }).then(function () {
+            botui.message
+                .add({ delay: 1500, content: "我现在就读于贵州贵阳市观山湖区第一高级中学, 上高三 (划掉)" })
+                .then(function () {
+                    botui.message.add({
+                        delay: 200,
+                        content: "24 年高考, 现就读于天津外国语大学"
+                    }).then(function () {
                         botui.message
                             .add({
                                 delay: 1500,
@@ -5241,7 +5247,7 @@ function bot_ui_ini() {
                                                 botui.message
                                                     .add({
                                                         delay: 1500,
-                                                        content: "喜欢 C#, Java, Python, C&C++, Win/Linux/Mac 混用党",
+                                                        content: "喜欢 C#, Python, C&C++, Rust, Win/Linux/Mac 混用党, 讨厌 Java",
                                                     })
                                                     .then(function () {
                                                         botui.message
@@ -5274,64 +5280,65 @@ function bot_ui_ini() {
                                     });
                             });
                     })
+                })
+        })
+    };
+    var thirdpart = function () {
+        botui.message
+            .add({
+                delay: 1e3,
+                content: "啊这..., 这个真的是当初英语老师喊我们取英文名时我瞎编的, 真的是瞎编的啊喂",
             })
-        },
-        thirdpart = function () {
-            botui.message
-                .add({
-                    delay: 1e3,
-                    content: "啊这..., 这个真的是当初英语老师喊我们取英文名时我瞎编的, 真的是瞎编的啊喂",
-                })
-                .then(function () {
-                    botui.action
-                        .button({
-                            delay: 1500,
-                            action: [{ text: "为什么叫醉月酿星河呢", value: "why-cat" }],
-                        })
-                        .then(function (a) {
-                            fourthpart();
-                        });
-                });
-        },
-        fourthpart = function () {
-            botui.message
-                .add({
-                    delay: 1e3,
-                    content: "不告诉你",
-                })
-                .then(function () {
-                    botui.message
-                        .add({
-                            delay: 1100,
-                            content: "就不告诉你",
-                        })
-                        .then(function () {
-                            botui.action
-                                .button({
-                                    delay: 1500,
-                                    action: [
-                                        { text: "域名有什么含义吗？", value: "why-domain" },
-                                    ],
-                                })
-                                .then(function (a) {
-                                    fifthpart();
-                                });
-                        });
-                });
-        },
-        fifthpart = function () {
-            botui.message
-                .add({ delay: 1e3, content: "catrol.cn 啊, 挺好记的" })
-                .then(function () {
+            .then(function () {
+                botui.action
+                    .button({
+                        delay: 1500,
+                        action: [{ text: "为什么叫醉月酿星河呢", value: "why-cat" }],
+                    })
+                    .then(function (a) {
+                        fourthpart();
+                    });
+            });
+    };
+    var fourthpart = function () {
+        botui.message
+            .add({
+                delay: 1e3,
+                content: "不告诉你",
+            })
+            .then(function () {
+                botui.message
+                    .add({
+                        delay: 1100,
+                        content: "就不告诉你",
+                    })
+                    .then(function () {
+                        botui.action
+                            .button({
+                                delay: 1500,
+                                action: [
+                                    { text: "域名有什么含义吗？", value: "why-domain" },
+                                ],
+                            })
+                            .then(function (a) {
+                                fifthpart();
+                            });
+                    });
+            });
+    };
+    var fifthpart = function () {
+        botui.message
+            .add({ delay: 1e3, content: "catrol.cn 啊, 挺好记的" })
+            .then(function () {
+                botui.message.add({
+                    delay: 1600,
+                    content: "既然来了, 打个赏呗, 我赌你不差钱 😀🤣!",
+                }).then(function () {
                     botui.message.add({
-                        delay: 1600,
-                        content: "既然来了, 打个赏呗, 我赌你不差钱😀🤣!",
-                    }).then(function () {
-                        botui.message.add({
-                            delay: 1300,
-                            content: "另外, 我 Bilibili 的名字也叫醉月酿星河, 多多支持鸭!"
-                        });
+                        delay: 1300,
+                        content: "另外, 我 Bilibili 的名字也叫醉月酿星河, 多多支持鸭!"
                     });
                 });
-        };
+            });
+    };
 }
